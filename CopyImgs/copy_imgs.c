@@ -11,7 +11,6 @@
 // which model
 char mod[20] = "0001";
 
-// which version? major version and minor version
 char ver[20] = "";
 
 // project name, D1C or PLT or others
