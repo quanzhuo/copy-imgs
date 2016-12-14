@@ -45,8 +45,9 @@ exist, it will be created. These two arguments are Mandatory.\n\n");
 }
 
 void handle_opts(int argc, char **argv) {
-	// require 3 parameter at least
-	int para_required = 3;
+	// require 5 parameter at least
+	// program name, -v option and its argument, src and dst directory
+	int para_required = 5;
 	char *prog = argv[0];
 	// Skip argv[0]
 	argv++;
