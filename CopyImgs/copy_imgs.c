@@ -30,7 +30,7 @@ BOOL rename_imgs = TRUE;
 char *path[IMG_COUNT];
 
 void usage(char *prog) {
-	printf("Usage: %s [options] <top-src-dir> <dst-dir>\n", prog);
+	printf("Usage: %s -v <version> [options] <top-src-dir> <dst-dir>\n", prog);
 	printf("Copy all the images you built under <top-src-dir> to <dst-dir>\n\n");
 	printf("  -v <version>:  Major version and minor version, must be 4 digit.\n");
 	printf("                 This option is Mandatory.\n");
@@ -52,11 +52,11 @@ void handle_opts(int argc, char **argv) {
 	// Skip argv[0]
 	argv++;
 
-	while (*argv) {
+	while (*argv && argc >= para_required) {
 		if (!strcmp(*argv, "-v")) {
 			argv++;
 			strcpy_s(ver, strlen(*argv) + 1, *argv);
-			para_required += 2;
+			//para_required += 2;
 		}
 		else if (!strcmp(*argv, "-m")) {
 			argv++;
